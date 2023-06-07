@@ -1,0 +1,13 @@
+:root {
+--dark-blue: #0F1528 !important;
+--white:#fff;
+--primary-color:#286BFF;
+--trans-dark:#9ec5ff1c;
+--trans-border:#343a40;
+--text-fade:rgb(209 228 255 / 70%);
+--fade-blue: rgb(40 107 255 / 20%);
+--text-fade-4: rgb(209 228 255 / 40%);
+--fade-red:rgba(239, 70, 111, 0.2);
+--fade-green:rgba(69, 178, 107, 0.2);
+--text-fade-8:#D1E4FF;
+}
