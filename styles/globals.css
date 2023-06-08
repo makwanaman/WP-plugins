@@ -155,6 +155,15 @@ img {
 .article-card-box {
   margin-bottom: 30px;
 }
+
+.card-img{
+  height: 100% !important;
+  width: 100% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-form {
   width: 100%;
   display: flex;
