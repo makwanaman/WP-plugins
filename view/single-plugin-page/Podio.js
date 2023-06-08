@@ -137,7 +137,7 @@ const Podio = ({ pluginState }) => {
         ) : (
           ""
         )}
-        <div className="card border-bg seo-card">
+        <div className="card border-bg seo-card ">
           <div className="card-body">
             <div className="row align-cen">
               <div className="col-lg-4">
