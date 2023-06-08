@@ -8,7 +8,7 @@ const index = () => {
   return (
     <>
       <div className="page-Header">
-        <Header />
+         <Header /> 
         <EntryHeader />
       </div>
       <FavlistTemplate />
