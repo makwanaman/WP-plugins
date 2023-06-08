@@ -14,7 +14,7 @@ const ArticleCard = ({ blog }) => {
   };
   return (
     <>
-      <div className="article-card-box">
+      <div className="article-card-box card-hover">
         <div className="card article-card">
           <div className="article-card-top">
             {blog?.image ? (

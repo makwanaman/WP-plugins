@@ -96,7 +96,7 @@ const ZeplinCard = (data) => {
   };
   return (
     <>
-      <div className="plugin-card-box">
+      <div className="plugin-card-box card-hover">
         {loaderState === true ? (
           <div className="loader-box">
             <Loader />
