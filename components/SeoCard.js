@@ -103,7 +103,7 @@ const SeoCard = ({ fav }) => {
 
   return (
     <>
-      <div className="card border-bg seo-card">
+      <div className="card border-bg seo-card card-hover">
         {loaderState === true ? (
           <div className="loader-box">
             <Loader />
