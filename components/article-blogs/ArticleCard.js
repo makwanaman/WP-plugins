@@ -17,14 +17,38 @@ const ArticleCard = ({ blog }) => {
       <div className="article-card-box">
         <div className="card article-card">
           <div className="article-card-top">
-            {blog?.image ? (
-              <img
-                className="card-img-top"
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${blog?.image}`}
-              />
-            ) : (
-              <Image alt="" src={Article1Img} className="card-img-top" />
-            )}
+            <div
+              style={{
+                height: "180px",
+                width: "100%",
+                overflow: "hidden",
+                borderRadius: 5,
+                display: 'flex',
+                justifyContent:"center",
+                alignItems:"center"
+              }}
+            >
+              {blog?.image ? (
+                <div
+                  className="card-img"
+                  style={{
+                    backgroundImage: `url(${process.env.NEXT_PUBLIC_IMAGE_URL}/${blog?.image})`,
+                  }}
+                >
+                  {" "}
+                </div>
+              ) : (
+                <Image
+                  alt=""
+                  src={Article1Img}
+                  className="card-img"
+                  layout="fixed"
+                  objectFit="cover"
+                  objectPosition={"center"}
+                  style={{backgroundPosition:""}}
+                />
+              )}
+            </div>
             <div className="card-body">
               <p className="f-14 text-fade-4 mb-2">
                 {dateFunction(blog?.created_at)}{" "}

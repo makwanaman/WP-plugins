@@ -31,7 +31,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-indiana-drag-scroll": "^3.0.1-alpha",
-    "react-js-pagination": "^3.0.3",
+    "react-js-pagination": "^3.0.2",
     "react-lines-ellipsis": "^0.15.3",
     "react-multi-select-component": "^4.3.4",
     "react-payment-inputs": "^1.1.9",
