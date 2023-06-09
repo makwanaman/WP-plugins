@@ -153,7 +153,7 @@ img {
 }
 .seo-card,
 .article-card-box {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .card-img{
@@ -417,11 +417,12 @@ span.seo-icon-link {
   transition: all 0.15s ease-in-out;
 }
 .cat-img:hover,
-.article-card:hover {
+.article-card:hover,
+.plugin-card-box:hover {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
   border-color: #e5e5ea;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out !important;
 
 }
 .article-card, .social-links ul li a{
