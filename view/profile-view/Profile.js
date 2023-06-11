@@ -303,6 +303,7 @@ const Profile = (data) => {
                 <input
                   type="file"
                   name="myImage"
+                  className="my_file"
                   onChange={(event) => {
                     setSelectedImage(event.target.files[0]);
                     setSelectedImageClick(true);
