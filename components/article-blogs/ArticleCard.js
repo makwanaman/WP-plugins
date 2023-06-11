@@ -45,7 +45,7 @@ const ArticleCard = ({ blog }) => {
                   layout="fixed"
                   objectFit="cover"
                   objectPosition={"center"}
-                  style={{backgroundPosition:""}}
+                  //style={{backgroundPosition:""}}
                 />
               )}
             </div>
