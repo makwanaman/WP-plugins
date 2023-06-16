@@ -28,11 +28,11 @@ const BlogSnippetsCard = (data) => {
                   ellipsis="..."
                   trimRight
                   basedOn="letters"
-                  className="card-title mb-1"
+                  className="card-title mb-1 LinesEllipsis-1"
                 />
                 <p className="auth-name mb-1 f-14">
                   <span className="text-fade"> Level:</span>{" "}
-                  <span className="primary-text">
+                  <span className="primary-text LinesEllipsis-1">
                     {data?.snippetInfo?.level}
                   </span>
                 </p>

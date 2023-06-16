@@ -18,15 +18,16 @@ const ArticleCard = ({ blog }) => {
         <div className="card article-card">
           <div className="article-card-top">
             <div
-              style={{
-                height: "180px",
-                width: "100%",
-                overflow: "hidden",
-                borderRadius: 5,
-                display: 'flex',
-                justifyContent:"center",
-                alignItems:"center"
-              }}
+              // style={{
+              //   height: "180px",
+              //   width: "100%",
+              //   overflow: "hidden",
+              //   borderRadius: 5,
+              //   display: 'flex',
+              //   justifyContent:"center",
+              //   alignItems:"center"
+              // }}
+               className="article-card-img"
             >
               {blog?.image ? (
                 <div

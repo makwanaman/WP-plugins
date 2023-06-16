@@ -168,6 +168,7 @@ const Profile = (data) => {
                     <img
                       alt="not fount"
                       width={"100px"}
+                      height={'102px'}
                       src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${selectedImageData}`}
                     />
                   </div>
@@ -280,7 +281,7 @@ const Profile = (data) => {
                     <Image
                       alt="not fount"
                       width={"100px"}
-                      height={"100px"}
+                      height={"102px"}
                       src={URL?.createObjectURL(selectedImage)}
                     />
                   </div>
@@ -290,6 +291,7 @@ const Profile = (data) => {
                     <img
                       alt="not fount"
                       width={"100px"}
+                      height={'102px'}
                       src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${selectedImageData}`}
                     />
                   </div>

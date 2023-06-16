@@ -19,15 +19,27 @@ const ArticleCard = (data) => {
       <div className="article-card-box">
         <div className="card article-card">
           <div className="article-card-top">
-            <Image alt="" src={Article1Img1} className="card-img-top" />
+            <div className="article-card-img">
+            {data?.article?.image ? (
+              <img
+                className="card-img"
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${data?.article?.image}`}
+              />
+            ) : (
+              <Image alt="" src={Article1Img1} className="card-img" layout="fixed"
+              objectFit="cover"
+              objectPosition={"center"} />
+            )}
+            </div>
+
             <div className="card-body">
               <p className="f-14 text-fade-4 mb-2">
                 {dateFunction(data?.article?.created_at)}
               </p>
-              <h4 className="card-title article-hd">{data?.article?.title}</h4>
+              <h4 className="card-title article-hd LinesEllipsis-1">{data?.article?.title}</h4>
               <p className="auth-name">
                 <span className="text-fade"> By</span>{" "}
-                <span className="primary-text">
+                <span className="primary-text LinesEllipsis-1">
                   {data?.article?.author?.name}{" "}
                 </span>
               </p>
@@ -53,3 +65,5 @@ const ArticleCard = (data) => {
 };
 
 export default ArticleCard;
+
+ 

@@ -156,6 +156,16 @@ img {
   margin-bottom: 30px;
 }
 
+.article-card-img{
+  height: 180px !important;
+  width:  100% !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+
 .card-img{
   height: 100% !important;
   width: 100% !important;
@@ -1760,7 +1770,7 @@ textarea {
   border-radius: 50%;
 }
 .uploaded-img {
-  height: 100px;
+  height: 102px;
   width: 100px;
   object-fit: contain;
   object-position: center;
@@ -2660,3 +2670,9 @@ p.notfound {
 .cat-name a, .cat-name a:hover{
   color: #fff;
 }
+
+
+.LinesEllipsis-1:hover{
+ cursor: pointer;
+ text-decoration: underline;
+}  

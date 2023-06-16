@@ -61,6 +61,16 @@
     padding-left: 18%;
   }
 }
+
+@media only screen and (min-width: 280px) and (max-width: 576px) {
+  .user-profile {
+    height: 100px;
+    width: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+}
+
 ul {
   margin-bottom: 0;
 }
