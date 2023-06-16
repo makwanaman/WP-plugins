@@ -261,11 +261,14 @@ span.seo-icon-link {
   display: inline-flex;
 }
 .card-footer-link .link:first-child {
-  padding-right: 6%;
-  border-right: 1px solid #9ec5ff30;
+  padding-right: 2%;
 }
 .card-footer-link .link:last-child {
-  padding-left: 6%;
+  padding-left: 2%;
+}
+.btn-size{
+font-family: inherit !important;
+font-size: 12px !important;
 }
 /* week's plugin css */
 .plugin-header {
@@ -1764,21 +1767,6 @@ textarea {
   border-radius: 50%;
   background: #fff;
 }
-/* .dropdown-toggle {
-  width: 100px;
-  height: 48px;
-  background: linear-gradient(98.58deg, rgba(158, 197, 255, 0.1) 0%, rgba(124, 177, 255, 0.06) 96.87%);
-  border: 1px solid rgba(158, 197, 255, 0.1);
-  backdrop-filter: blur(21px);
-  border-radius: 8px;
-  color: #fff;
-  margin-left: 10px;
-} */
-
-
-
-
-
 
 .my_file{
   position: absolute;
@@ -1802,22 +1790,25 @@ textarea {
    visibility: hidden !important;
 }
 .my_file::before{
-   content: url("../public/add-icon.svg");
+   content: url("../public/camera.svg");
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    /* font-size: 100px; */
-text-align: center;
+    text-align: center;
    }
 
-
-
-
-
-
-
-
+/* .dropdown-toggle {
+  width: 100px;
+  height: 48px;
+  background: linear-gradient(98.58deg, rgba(158, 197, 255, 0.1) 0%, rgba(124, 177, 255, 0.06) 96.87%);
+  border: 1px solid rgba(158, 197, 255, 0.1);
+  backdrop-filter: blur(21px);
+  border-radius: 8px;
+  color: #fff;
+  margin-left: 10px;
+} */
 
 
 .dropdown-toggle {

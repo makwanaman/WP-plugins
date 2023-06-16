@@ -12,6 +12,7 @@ import Loader from "../../components/Loader";
 import cookie from "js-cookie";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+
 const FavlistTemplate = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,17 +23,20 @@ const FavlistTemplate = () => {
   const [pageLimit, setPageLimit] = useState();
   const [topList, setTopList] = useState();
   const [loaderState, setLoaderState] = useState(false);
+  const [deleteData, setDeleteData] = useState(false);
   const router = useRouter();
+  const [stateChange, setStateChange] = useState(false);
 
   const getAllWpfavs = async () => {
     try {
       setLoaderState(true);
 
       let access_token = cookie.get("access_token");
+      let user_id = cookie.get("user_id");
 
       if (access_token) {
         let allWpFavs = await axios.get(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/wpfavs?search=${search}&page=${currentPage}&sortby=${sortKeyword}`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/wpfavs/${user_id}?search=${search}&page=${currentPage}&sortby=${sortKeyword}`,
           {
             headers: {
               Authorization: access_token,
@@ -73,10 +77,12 @@ const FavlistTemplate = () => {
             },
           }
         );
+
         setTopList(allTopList?.data?.data);
       }
       setLoaderState(false);
     } catch (err) {
+      setLoaderState(false);
       if (err?.response?.data?.status === 401) {
         cookie.remove("access_token");
         setLoaderState(false);
@@ -92,7 +98,7 @@ const FavlistTemplate = () => {
   }, [currentPage, sortKeyword]);
   useEffect(() => {
     getTopList();
-  }, []);
+  }, [stateChange]);
 
   return (
     <>
@@ -112,7 +118,12 @@ const FavlistTemplate = () => {
             {topList?.map((list) => {
               return (
                 <div className="col-lg-4 col-md-6">
-                  <SeoCard fav={list} />
+                  <SeoCard
+                    fav={list}
+                    setStateChange={setStateChange}
+                    deleteData={true}
+                    stateChange={stateChange}
+                  />
                 </div>
               );
             })}
