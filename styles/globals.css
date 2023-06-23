@@ -186,7 +186,9 @@ img {
   );
   border: 1px solid rgba(158, 197, 255, 0.1);
   border-radius: 7px;
+  position: relative;
 }
+
 .hero-form input.form-control {
   width: 70%;
   background-color: transparent;
@@ -196,6 +198,39 @@ img {
   padding: 0px;
   padding-left: 15px;
 }
+
+.dropDown-css{
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  background-color: var(--dark-blue) !important;
+  background-image: url(../public/site-bg.png);
+  top: 64px;
+  left: 0;
+  z-index: 1;
+  border-radius: 9px;
+  overflow: auto;
+}
+
+.dropdown-row{
+  background-color: transparent;
+  border-bottom:1px solid #1d2744 ;
+}
+
+.dropdown-row:hover{
+  background-color: #172646;
+} 
+
+.dropDown-css::-webkit-scrollbar{
+  display: none;
+}
+
+.dropDown-css{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 .search-btn {
   padding: 2.2% 4%;
 }
@@ -1755,7 +1790,7 @@ textarea {
 } */
 .edit-user-pic {
   width: 100px;
-  height: 102px;
+  height: 100px;
   position: relative;
   border-radius: 50%;
   overflow: hidden;
@@ -1770,7 +1805,7 @@ textarea {
   border-radius: 50%;
 }
 .uploaded-img {
-  height: 102px;
+  height: 100px;
   width: 100px;
   object-fit: contain;
   object-position: center;

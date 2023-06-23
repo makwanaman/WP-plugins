@@ -1,15 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import HeroImg from "../../public/hero-img.svg";
 import SearchIcon from "../../public/search-icon.svg";
 import Devider from "../../components/Devider";
 import { useRouter } from "next/router";
+import cookie from "js-cookie";
+import axios from "axios";
 const HeorSection = () => {
   let [searchData, setSearchData] = useState("");
+  const [options, setOptions] = useState();
+
+  const filterUser = async () => {
+    try {
+      let access_token = cookie.get("access_token");
+      if (access_token) {
+        if (searchData !== "") {
+          let responseData = await axios.get(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/plugins/search?slug=${searchData}`,
+            {
+              headers: {
+                Authorization: access_token,
+              },
+            }
+          );
+
+          setOptions(responseData?.data?.data);
+        } else {
+          setOptions([]);
+        }
+      } else {
+        router.push("/signup");
+      }
+    } catch (err) {
+      if (err?.response?.data?.status === 401) {
+        router.push("/signin");
+      } else {
+        toast.error("something went wrong");
+      }
+      // toast.error("something went wrong");
+    }
+  };
+
   const handleSearch = (e) => {
     setSearchData(e.target.value);
+    if (e.target.value) {
+      filterUser();
+    }
   };
   const router = useRouter();
+
+  useEffect(() => {
+    if (!searchData) {
+      setOptions([]);
+    }
+  }, [searchData]);
   return (
     <>
       <section className="hero-section">
@@ -36,6 +80,7 @@ const HeorSection = () => {
                   <input
                     className="form-control"
                     type="search"
+                    value={searchData}
                     placeholder="Look for plugin for your website?"
                     onChange={handleSearch}
                   />
@@ -52,6 +97,21 @@ const HeorSection = () => {
                     <Image alt="" src={SearchIcon} />
                     <span className="search-txt">Search</span>
                   </button>
+                  <div className="dropDown-css">
+                    {options?.map((option) => {
+                      return (
+                        <div
+                          className="dropdown-row cursor-pointer p-2 "
+                          onClick={(e) => {
+                            setSearchData(option?.name);
+                            setOptions();
+                          }}
+                        >
+                          {option?.name}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </form>
               </div>
             </div>
